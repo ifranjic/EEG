@@ -119,7 +119,7 @@ class Eeg:
 
 
 eeg = Eeg()
-eeg.get_gdf_name("signals/")
+eeg.get_gdf_name("../signals/")
 eeg.enter_names_of_classes()
 eeg.get_raw_eeg_data()
 print(np.shape(eeg.data["left_hand"]))
