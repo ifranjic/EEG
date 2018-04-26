@@ -13,8 +13,7 @@ class Eeg:
     directory = ""
 
     def __init__(self, class1 = "left_hand", class2 = "right_hand"):
-        print("Let's start with analyzing some signals!!\n")
-        print("Firsly, you have to name classes by calling the method enter_names_of_classes()!")
+        print("Firsly, you have to name classes by calling the method enter_classes_names()!")
         print("If you do not enter the names, they will be \"left_hand\" and \"right_hand\"!\n")
 
     @classmethod
@@ -25,7 +24,7 @@ class Eeg:
                 cls.gdf_files_names.append(file)
 
     @classmethod
-    def enter_names_of_classes(cls, class1 = "left_hand", class2 = "right_hand"):
+    def enter_classes_names(cls, class1 = "left_hand", class2 = "right_hand"):
         cls.event_id[class1] = 769
         cls.event_id[class2] = 770
 
@@ -120,7 +119,7 @@ class Eeg:
 
 eeg = Eeg()
 eeg.get_gdf_name("../signals/")
-eeg.enter_names_of_classes()
+eeg.enter_classes_names()
 eeg.get_raw_eeg_data()
 print(np.shape(eeg.data["left_hand"]))
 print(np.shape(eeg.data["right_hand"]))
